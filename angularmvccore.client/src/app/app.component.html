@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<br />
+<a href="https://docs.google.com/document/d/1HRdmeMjfBZUYRKjPbenYW3JesHNwwcnh/edit?usp=sharing&ouid=117587819238090799921&rtpof=true&sd=true" target="_blank">
+  <img src="MySkills.jpg" class="myImage" alt="My Skills" />
+</a>
+<h5>If you want to take a look of my resume just click on my image</h5>
+<br />
+<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
